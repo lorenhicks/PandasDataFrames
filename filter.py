@@ -7,6 +7,9 @@ data = {
 }
 df = pd.DataFrame(data)
 
-newdf = df.to_string()
+def activeSession(n):
+    return (n, data["user"][int(n)], data["auth_token_active"][int(n)])
 
-print(newdf)
+sessionID = map(activeSession, (0, 1, 2))
+
+print(list(sessionID))
